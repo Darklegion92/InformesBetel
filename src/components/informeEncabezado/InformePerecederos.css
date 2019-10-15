@@ -1,0 +1,48 @@
+.main {
+    width: 100%;
+	/* max-width: 1000px; */
+	margin: 0;
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(4, auto);
+    grid-template-areas:	
+    "navBar 		navBar      navBar	 	navBar      navBar		navBar  "
+	"sidebar 	contenido   contenido	contenido   contenido 	contenido	"
+	"sidebar 	contenido   contenido	contenido   contenido 	contenido	";
+	
+}
+
+.opciones{
+    background: #fff; 
+	color: #000;
+    grid-area: navBar;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    padding: 1%;
+    border: thick;
+}
+
+.opciones h1{
+    text-align: center;
+    padding: 10px;
+}
+
+.opciones input, select{
+    max-height: 42px;
+    font-size: 14px!important;
+    padding: 0;
+    margin-bottom: 10px;
+    
+}
+.opciones input{
+
+    margin-top: 15px;
+    
+}
+.opciones>form>div>div>button{
+    margin-top: 43%;
+}
+.opciones>form>div>div{
+    margin-left: 50px;
+}
