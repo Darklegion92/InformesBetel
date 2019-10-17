@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import Axios from 'axios';
-
+import { Switch, Route, Router } from "react-router-dom"
 import './App.css';
 import './components/tabla/Tabla.scss'
 import Login from './components/login/Login';
 import NavBar from './components/navBar/NavBar';
 import InformePerecederos from './components/informeEncabezado/InformePerecederos';
 import SideBar from './components/sideBar/SideBar';
+import TableContainer from './components/tabla/TableContainer';
 
 
 export default class App extends Component{
@@ -49,8 +50,13 @@ export default class App extends Component{
        <div className="contenedor-Home">
           <div className="navBar"><NavBar name={"Administrador"}/></div>
           <div className="sideBar"><SideBar name={"Administrador"}/></div>
-          <div className="contenidoEncabezado"><InformePerecederos/></div>
+            <Switch>
+              < Route exact path="/perecederos" component={InformePerecederos} />
+              <Route path="/perecederos/fruver" component={TableContainer} />
+            </Switch>
       </div>
+
+
       ) 
             
             

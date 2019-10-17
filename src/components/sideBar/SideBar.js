@@ -57,7 +57,7 @@ export default class SideBar extends Component {
                 </a>
                 <ul className="sub-menu collapse" id="products">
                   <li className="active">
-                    <a href="/consolidado">Consolidado</a>
+                    <a href="/perecederos/">Consolidado Fruver</a>
                   </li>
                   <li className="active">
                     <a href="/carne">Carne</a>

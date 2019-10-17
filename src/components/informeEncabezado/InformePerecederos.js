@@ -3,6 +3,7 @@ import "./InformePerecederos.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"
 import Axios from 'axios';
+import Tabla from '../tabla/TableContainer'
 
 export default class Informe extends Component {
   state = {
@@ -35,7 +36,6 @@ export default class Informe extends Component {
      .catch(e=>{
        console.log("Error al ingresar "+ e)   
      })
-     console.log(res2.data.res);
      
     this.setState({
       ajustes:res2.data.res
@@ -53,9 +53,15 @@ export default class Informe extends Component {
       fin: date
     });
   }
-  onClick = (e)=>{
-    console.log(this.state.inicio+this.state.trasIniSel);
-    
+  onClick = async (e)=>{
+    const res =  await Axios.get("http://localhost:3001/perecederos/parametros/fruver/informe",{
+      headers: {
+          token: localStorage.getItem('token') 
+    }}).catch(e=>{
+      console.log("Error al ingresar "+ e)   
+    })    
+    localStorage.setItem("datosInforme",JSON.stringify(res.data.inicial))
+    window.location.assign("/perecederos/fruver/consolidado")
     e.preventDefault()
   }
   onChange=(e)=>{

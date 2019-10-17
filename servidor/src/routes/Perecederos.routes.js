@@ -5,7 +5,7 @@ router = Router();
 router
     .get('/parametros/bodegas',PerecederosCtrl.bodegas)
     .get('/parametros/ajustes',PerecederosCtrl.ajustes)
-    .get('/parametros/informe',PerecederosCtrl.informe)
+    .get('/parametros/fruver/informe',PerecederosCtrl.informeFruver)
     
     .get('/*',PerecederosCtrl.error)
     

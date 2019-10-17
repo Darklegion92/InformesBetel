@@ -31,7 +31,7 @@ export default class NavBar extends Component {
               <span className="navbar-toggler-icon"></span>
             </button>
             <a className="navbar-brand p-0 mr-5" href="##">
-              <img src="./img/logo.webp"  width = "50%" alt="logo"/>
+              <img src="../img/logo.webp"  width = "50%" alt="logo"/>
             </a>
             <div
               className="collapse navbar-collapse flex-row-reverse"

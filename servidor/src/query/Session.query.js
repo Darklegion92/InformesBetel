@@ -1,6 +1,6 @@
 const ConexionMysql = require('../config/conectionDB')
 
-async function createSession(user,password,token){
+async function createSession(user,password,token,res){
     const con = ConexionMysql();
     await con.query('INSERT INTO sessions SET?',{
       token,
@@ -12,11 +12,9 @@ async function createSession(user,password,token){
     })
 }
 
-function deleteSession(user,res){
+function deleteSession(token,res){
     const con = ConexionMysql();
-    con.query('DELETE FROM sessions WHERE?',{
-      user
-    },(e,r)=>{
+    con.query('DELETE FROM sessions WHERE token =?',[token],(e,r)=>{
       if(e)
         return res.status(500).send(e);
     })
